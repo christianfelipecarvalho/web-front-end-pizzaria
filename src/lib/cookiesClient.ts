@@ -4,4 +4,4 @@ export function getookieClient(){
     const token = getCookie("session");
 
     return token;
-}
+} 
