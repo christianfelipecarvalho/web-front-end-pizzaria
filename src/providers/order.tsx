@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, ReactNode } from "react";
+import { createContext, ReactNode, useState } from "react";
 
 type OrderContextData = {
     isOpen: boolean;
@@ -14,3 +14,21 @@ type OrderProviderProps = {
 
 export const OrderContext = createContext({} as OrderContextData);
 
+export function OrderProvider({ children }: OrderProviderProps) {
+    const [isOpen, setIsOpen] = useState(false);
+
+    function onRequestOpen() {
+        setIsOpen(true);
+    }
+
+    function onRequestClose() {
+        setIsOpen(false);
+    }
+
+    return (
+        <OrderContext.Provider value={{ isOpen, onRequestOpen, onRequestClose}}>
+            {children}
+        </OrderContext.Provider>
+    );
+
+}
