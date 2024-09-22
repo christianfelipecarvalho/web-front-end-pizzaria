@@ -32,7 +32,6 @@ export default function Category(){
             console.error(err)
             return; 
         })
-        toast.success("Categoria adicionada com sucesso!")
         redirect('/dashboard')
 
 
