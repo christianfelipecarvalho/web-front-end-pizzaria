@@ -24,8 +24,8 @@ export function Header(){
           <Image
             alt="Logo Sujeito Pizza"
             src={logoImg}
-            width={260}
-            height={60}
+            width={180}
+            height={50}
             priority={true}
             quality={100}
           />

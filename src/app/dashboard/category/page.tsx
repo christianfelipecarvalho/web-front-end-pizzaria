@@ -1,6 +1,7 @@
 import { getCookieServer } from '@/lib/cookieServer';
 import { api } from '@/services/api';
 import { redirect } from 'next/navigation';
+import { toast } from 'sonner';
 import { Button } from '../components/button';
 import styles from './styles.module.scss';
 
@@ -27,10 +28,11 @@ export default function Category(){
         })
            
         .catch((err) =>{
+            toast.error("Erro ao adicionar categoria! " + err)
             console.error(err)
             return; 
         })
-
+        toast.success("Categoria adicionada com sucesso!")
         redirect('/dashboard')
 
 

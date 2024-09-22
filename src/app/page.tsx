@@ -3,6 +3,7 @@ import { cookies } from 'next/headers'
 import Image from 'next/image'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
+import { toast } from 'sonner'
 import styles from './page.module.scss'
 import logoImg from '/public/pizza.png'
 export default function Page(){
@@ -31,9 +32,11 @@ export default function Page(){
     }
     catch(error){
       console.log(error)
+      toast.error("Erro ao logar! " + error)
       console.log('Erro ao logar')
       return;
     }
+    toast.success("Operação realizada com sucesso!")
     redirect("/dashboard");
   }
   return(
@@ -42,8 +45,8 @@ export default function Page(){
         <Image
           src={logoImg}
           alt="Logo da pizzaria"
-          width={425}
-          height={119}
+          width={350}
+          height={100}
           priority={true}
           quality={100}
         />
