@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 import styles from './styles.module.scss'
-import logoImg from '/public/logo.svg'
+import logoImg from '/public/pizza.png'
 
 export function Header(){
   const router = useRouter();
@@ -24,7 +24,7 @@ export function Header(){
           <Image
             alt="Logo Sujeito Pizza"
             src={logoImg}
-            width={190}
+            width={260}
             height={60}
             priority={true}
             quality={100}

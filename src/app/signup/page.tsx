@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import styles from '../page.module.scss'
-import logoImg from '/public/logo.svg'
+import logoImg from '/public/pizza.png'
 
 export default function Signup() {
     async function handleRegister(formData: FormData){
@@ -31,6 +31,10 @@ export default function Signup() {
         <Image
           src={logoImg}
           alt="Logo da pizzaria"
+          priority={true}
+          height={80}
+          width={420}
+          quality={100}
         />
 
         <section className={styles.login}>

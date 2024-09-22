@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import styles from './page.module.scss'
-import logoImg from '/public/logo.svg'
+import logoImg from '/public/pizza.png'
 export default function Page(){
   async function handleLogin(formData: FormData){
     "use server"
@@ -42,6 +42,10 @@ export default function Page(){
         <Image
           src={logoImg}
           alt="Logo da pizzaria"
+          width={425}
+          height={119}
+          priority={true}
+          quality={100}
         />
 
         <section className={styles.login}>
